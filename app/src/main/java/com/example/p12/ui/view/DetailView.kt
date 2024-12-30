@@ -134,29 +134,29 @@ fun BodyDetailMhs(
 fun ItemDetailMhs(
     modifier: Modifier = Modifier,
     mahasiswa: Mahasiswa
-){
+) {
     Card(
         modifier = modifier.fillMaxWidth().padding(top = 20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            containerColor = Color(0xFF136207), // Hijau #136207
+            contentColor = Color.White // Tulisan putih
         )
-    ){
+    ) {
         Column(
             modifier = Modifier
                 .padding(16.dp)
         ) {
-            ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nim)
+            ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nim, titleColor = Color(0xFFFFFDD0)) // Cream
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Nama", isinya = mahasiswa.nama)
+            ComponentDetailMhs(judul = "Nama", isinya = mahasiswa.nama, titleColor = Color(0xFFFFFDD0)) // Cream
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat)
+            ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat, titleColor = Color(0xFFFFFDD0)) // Cream
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin)
+            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin, titleColor = Color(0xFFFFFDD0)) // Cream
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas)
+            ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas, titleColor = Color(0xFFFFFDD0)) // Cream
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Angkatan", isinya = mahasiswa.angkatan)
+            ComponentDetailMhs(judul = "Angkatan", isinya = mahasiswa.angkatan, titleColor = Color(0xFFFFFDD0)) // Cream
         }
     }
 }
@@ -164,9 +164,10 @@ fun ItemDetailMhs(
 @Composable
 fun ComponentDetailMhs(
     modifier: Modifier = Modifier,
-    judul:String,
-    isinya:String
-){
+    judul: String,
+    isinya: String,
+    titleColor: Color = Color.Gray // Default warna abu-abu untuk judul
+) {
     Column(
         modifier = modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.Start
@@ -175,13 +176,15 @@ fun ComponentDetailMhs(
             text = "$judul : ",
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Gray
+            color = titleColor // Menggunakan warna judul yang dikirim
         )
         Text(
             text = isinya,
             fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = Color.White // Tulisan isi berwarna putih
         )
     }
 }
+
 
