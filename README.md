@@ -13,7 +13,7 @@ Hasil Screenshoots:
 
 ### 2. Update and Delete Screenshots
 
-| ![Hasil Update](hasilupdate.png) | ![Insert](nsert.png) | ![Update](update.png) |
+| ![Hasil Update](hasilupdate.png) | ![Insert](insert.png) | ![Update](update.png) |
 |:----------------------------:|:----------------:|:-----------------:|
 | **Hasil Update**             | **Insert**       | **Update**        |
 
